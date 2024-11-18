@@ -1295,6 +1295,36 @@ iframe {
   height: 400px;
 }
 
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .contact-infos {
+    flex-direction: column; /* Stacks items in a column on smaller screens */
+    align-items: center;    /* Centers the items */
+    gap: 20px;              /* Adds space between items */
+  }
+
+  .info-item {
+    flex-direction: column; /* Ensures icons and text are stacked vertically */
+    align-items: center;    /* Centers the content */
+  }
+
+  .info-item i {
+    margin-bottom: 10px; /* Adds space between icon and text */
+  }
+
+  .our-contact h1 {
+    font-size: 28px; /* Adjust heading size for smaller screens */
+  }
+
+  .our-contact p {
+    font-size: 14px; /* Adjust paragraph size for smaller screens */
+  }
+
+  iframe {
+    height: 300px; /* Reduces the iframe height for mobile screens */
+  }
+}
+
 /* Footer Styles */
 .footer {
   display: grid;
