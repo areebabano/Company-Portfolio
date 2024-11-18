@@ -237,8 +237,8 @@ body {
         display:none;
     }
     .contact-info button{
-      margin-right: 100px;
-      font-size: 8px;
+      margin-right: 90px;
+      font-size: 10px;
     }
 
     .hamburger {
@@ -1056,11 +1056,11 @@ body {
 
 /* Our Skills Section Styling */
 .our-skills {
-  padding: 200px 20px;
+  padding: 240px 20px;
   text-align: center;
   background-color: #f9f9f9;
   font-family: serif;
-  margin-top: 190px;
+  margin-top: 200px;
 }
 
 .our-skills h1 {
