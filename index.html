@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comapny Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="social-icons">
+        <a href="https://www.youtube.com" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
+        <a href="https://www.facebook.com" target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://www.linkedin.com" target="_blank"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a href="https://www.twitter.com" target="_blank"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a href="https://plus.google.com" target="_blank"
+          ><i class="fab fa-google-plus"></i
+        ></a>
+      </div>
+      <div class="contact-info">
+        <p><i class="fa fa-phone"></i>+92(304)386-6719</p>
+        <p><i class="fa fa-phone"></i>+92(317)011-3001</p>
+        <button>Call Me Back</button>
+      </div>
+    </header>
+    <nav class="navbar">
+      <div class="company-logo">
+        <img src="/images/panacloud.png" alt="PanaCloud" />
+      </div>
+    <div class="nav-links">
+      <a href="#about-us-section"><i class="fas fa-check-circle"></i> Why Us</a>
+      <a href="#advantages-section"><i class="fas fa-info-circle"></i> About</a>
+      <a href="#services-section"><i class="fas fa-concierge-bell"></i> Services</a>
+      <a href="#portfolio-section"><i class="fas fa-briefcase"></i> Portfolio</a>
+      <a href="#process-section"><i class="fas fa-cogs"></i> Process</a>
+      <a href="#people-about-us-section"><i class="fas fa-star"></i> Reviews</a>
+      <a href="#skills-section"><i class="fas fa-chart-line"></i> Skills</a>
+      <a href="#contact-section""><i class="fas fa-envelope"></i> Contact Us</a>
+    </div>
+    
+      <!-- Hamburger Icon -->
+      <div class="hamburger">&#9776;</div>
+      <!-- <div class="hamburger" onclick="toggleSidebar()">
+        ☰
+    </div> -->
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <span class="close-btn">&times;</span>
+      <a href="#about-us-section"><i class="fas fa-check-circle"></i> Why Us</a>
+      <a href="#advantages-section"><i class="fas fa-info-circle"></i> About</a>
+      <a href="#services-section"><i class="fas fa-concierge-bell"></i> Services</a>
+      <a href="#portfolio-section"><i class="fas fa-briefcase"></i> Portfolio</a>
+      <a href="#process-section"><i class="fas fa-cogs"></i> Process</a>
+      <a href="#people-about-us-section"><i class="fas fa-star"></i> Reviews</a>
+      <a href="#skills-section"><i class="fas fa-chart-line"></i> Skills</a>
+      <a href="#contact-section""><i class="fas fa-envelope"></i> Contact Us</a>
+    </div>
+
+    <section class="hero-section" >
+      <div class="hero-content" id="#about-us-section">
+        <h1>We Are Experts</h1>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum,
+          doloribus maiores. Tempora adipisci culpa fugit nostrum ipsa.
+        </p>
+        <button>Read More</button>
+        <!-- Three Dots for Slider -->
+        <div class="slider-dots">
+          <span class="dot" onclick="currentSlide(0)"></span>
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+      </div>
+    </section>
+    <!-- Our Advantage Section -->
+    <section class="advantage-section" id="advantages-section">
+      <h1>Our <span>Advantages</span></h1>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est soluta
+        corrupti reiciendis, fugit beatae amet voluptatum laborum quibusdam
+        atque odio inventore fugiat adipisci, error, tempore vitae ipsam ut
+        deserunt repudiandae.
+      </p>
+
+      <div class="advantage-icons">
+        <!-- Innovation Advantage -->
+        <div class="advantage-icon">
+          <div class="ad-icon">
+            <i class="bx bx-bulb"></i>
+            <!-- Innovation Icon -->
+          </div>
+          <h3>Innovation</h3>
+          <p>Cutting-edge solutions through innovative approaches.</p>
+        </div>
+
+        <!-- Quality Advantage -->
+        <div class="advantage-icon">
+          <div class="ad-icon">
+            <i class="bx bx-like"></i>
+            <!-- Quality Icon -->
+          </div>
+          <h3>Quality</h3>
+          <p>Commitment to exceptional quality in every project.</p>
+        </div>
+
+        <!-- Experience Advantage -->
+        <div class="advantage-icon">
+          <div class="ad-icon">
+            <i class="bx bx-time"></i>
+            <!-- Experience Icon -->
+          </div>
+          <h3>Experience</h3>
+          <p>Years of experience delivering outstanding results.</p>
+        </div>
+
+        <!-- Happy Clients Advantage -->
+        <div class="advantage-icon">
+          <div class="ad-icon">
+            <i class="bx bx-group"></i>
+            <!-- Happy Clients Icon -->
+          </div>
+          <h3>Happy Clients</h3>
+          <p>Clients satisfied with our exceptional service.</p>
+        </div>
+
+        <!-- Support Advantage -->
+        <div class="advantage-icon">
+          <div class="ad-icon">
+            <i class="bx bx-message-alt"></i>
+            <!-- Support Icon -->
+          </div>
+          <h3>Support</h3>
+          <p>Dedicated support team ready to assist anytime.</p>
+        </div>
+      </div>
+    </section>
+    <!-- About Us Section -->
+    <section class="about-us-section" id="about-us-section">
+      <h1>About <span>Us</span></h1>
+      <div class="about-us-content">
+        <!-- Left Content with Text -->
+        <div class="about-text">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam.
+          </p>
+          <p>
+            Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis
+            ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.
+          </p>
+          <p>
+            Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+            Curabitur tortor. Pellentesque nibh.
+          </p>
+          <button class="read-more">Read More</button>
+        </div>
+
+        <!-- Right Content with Image -->
+        <div class="about-image">
+          <img src="images/about.PNG" alt="About Us Image" />
+          <!-- Replace with your image path -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Services Section -->
+    <section class="our-services-section" id="services-section">
+      <h1>Our <span>Services</span></h1>
+      <p class="services-description">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta est
+        velit repellat, impedit nisi, vitae rem quos rerum adipisci recusandae
+        harum molestias quis voluptate quia fuga illo odit dignissimos! Veniam.
+      </p>
+      <div class="services-cards">
+        <!-- Card 1 -->
+        <div class="service-card">
+          <div class="icon">
+            <i class="fas fa-star"></i>
+            <!-- Star icon -->
+          </div>
+          <h3>Web Design</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio.
+          </p>
+          <button class="read-more">Read More</button>
+        </div>
+        <!-- Card 2 -->
+        <div class="service-card">
+          <div class="icon">
+            <i class="fas fa-star"></i>
+            <!-- Star icon -->
+          </div>
+          <h3>Graphic Design</h3>
+          <p>
+            Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh
+            elementum imperdiet.
+          </p>
+          <button class="read-more">Read More</button>
+        </div>
+        <!-- Card 3 -->
+        <div class="service-card">
+          <div class="icon">
+            <i class="fas fa-star"></i>
+            <!-- Star icon -->
+          </div>
+          <h3>Branding</h3>
+          <p>
+            Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+            Curabitur tortor.
+          </p>
+          <button class="read-more">Read More</button>
+        </div>
+        <!-- Card 4 -->
+        <div class="service-card">
+          <div class="icon">
+            <i class="fas fa-star"></i>
+            <!-- Star icon -->
+          </div>
+          <h3>Marketing</h3>
+          <p>
+            Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.
+            Maecenas mattis.
+          </p>
+          <button class="read-more">Read More</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Portfolio Section -->
+    <section class="our-portfolio-section" id="portfolio-section">
+      <h1>Our <span>Portfolio</span></h1>
+      <p class="portfolio-description">
+        Lorem ipsum dolor dae officiis inventore magnam similique temporibus
+        sint architecto quibusdam maiores vel.
+      </p>
+      <!-- Categories -->
+      <div class="portfolio-categories">
+        <span>Web Design</span>
+        <span>Graphic Design</span>
+        <span>Branding</span>
+        <span>Logo</span>
+        <span>Marketing</span>
+        <span>Advertisement</span>
+      </div>
+      <!-- Portfolio Images -->
+      <div class="portfolio-images">
+        <div class="portfolio-item">
+          <img src="images/portfolio1.png" alt="Portfolio Image 1" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio2.png" alt="Portfolio Image 2" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio3.png" alt="Portfolio Image 3" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio4.png" alt="Portfolio Image 4" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio5.png" alt="Portfolio Image 5" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio6.png" alt="Portfolio Image 6" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio7.png" alt="Portfolio Image 7" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio8.png" alt="Portfolio Image 8" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio9.png" alt="Portfolio Image 9" />
+        </div>
+        <div class="portfolio-item">
+          <img src="images/portfolio10.png" alt="Portfolio Image 10" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section class="our-process-section" id="process-section">
+      <h1>Our <span>Process</span></h1>
+      <p class="process-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+        odio. Praesent libero.
+      </p>
+
+      <!-- Process Steps -->
+      <div class="process-steps">
+        <!-- Step 1 -->
+        <div class="process-step">
+          <div class="circle">
+            <div class="half-circle">1</div>
+          </div>
+          <i class="fas fa-phone icon"></i>
+          <!-- Replace with your icons -->
+          <h3>Request Call</h3>
+          <p class="step-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <!-- Add description -->
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-step">
+          <div class="circle">
+            <div class="half-circle">2</div>
+          </div>
+          <i class="fas fa-comments icon"></i>
+          <h3>Consultation</h3>
+          <p class="step-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <!-- Add description -->
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-step">
+          <div class="circle">
+            <div class="half-circle">3</div>
+          </div>
+          <i class="fas fa-tasks icon"></i>
+          <h3>Planning</h3>
+          <p class="step-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <!-- Add description -->
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-step">
+          <div class="circle">
+            <div class="half-circle">4</div>
+          </div>
+          <i class="fas fa-cogs icon"></i>
+          <h3>Work Process</h3>
+          <p class="step-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <!-- Add description -->
+        </div>
+
+        <!-- Step 5 -->
+        <div class="process-step">
+          <div class="circle">
+            <div class="half-circle">5</div>
+          </div>
+          <i class="fas fa-pencil-alt icon"></i>
+          <h3>Correcting</h3>
+          <p class="step-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <!-- Add description -->
+        </div>
+
+        <!-- Step 6 -->
+        <div class="process-step">
+          <div class="circle">
+            <div class="half-circle">6</div>
+          </div>
+          <i class="fas fa-check-circle icon"></i>
+          <h3>Deliver</h3>
+          <p class="step-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+          <!-- Add description -->
+        </div>
+      </div>
+    </section>
+    <!-- People About Us Section  -->
+
+    <section class="people-about-us" id="people-about-us-section">
+      <h1>People <span>About Us</span></h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+        tristique arcu vel nisi cursus, nec fermentum arcu laoreet. Sed ac velit
+        sit amet felis placerat auctor.
+      </p>
+
+      <div class="border-container">
+        <!-- Person 1 -->
+        <div class="box">
+          <div class="ppl-icon">
+            <i class="fas fa-user"></i>
+            <!-- User Icon -->
+          </div>
+          <h3>John Doe</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
+            amet tortor nulla.
+          </p>
+        </div>
+
+        <!-- Person 2 -->
+        <div class="box">
+          <div class="ppl-icon">
+            <i class="fas fa-user"></i>
+            <!-- User Icon -->
+          </div>
+          <h3>Jane Smith</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
+            amet tortor nulla.
+          </p>
+        </div>
+
+        <!-- Person 3 -->
+        <div class="box">
+          <div class="ppl-icon">
+            <i class="fas fa-user"></i>
+            <!-- User Icon -->
+          </div>
+          <h3>Alex Johnson</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
+            amet tortor nulla.
+          </p>
+        </div>
+
+        <!-- Person 4 -->
+        <div class="box">
+          <div class="ppl-icon">
+            <i class="fas fa-user"></i>
+            <!-- User Icon -->
+          </div>
+          <h3>Maria Garcia</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sit
+            amet tortor nulla.
+          </p>
+        </div>
+        <!-- Three Dots for Slider -->
+        <div class="slider-dot">
+          <span class="dots" onclick="currentSlide(0)"></span>
+          <span class="dots" onclick="currentSlide(1)"></span>
+          <span class="dots" onclick="currentSlide(2)"></span>
+        </div>
+      </div>
+    </section>
+    <!-- Our Skills Section  -->
+
+    <section class="our-skills" id="skills-section">
+      <h1>Our <span>Skills</span></h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos in,
+        optio expedita nulla placeat assumenda omnis nostrum quo excepturi
+        aliquid.
+      </p>
+
+      <div class="skills">
+        <div class="skill">
+          <div class="skill-circle" data-skill="graphic-design">
+            <span class="percentage">45%</span>
+          </div>
+          <h3>Graphic Design</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-circle" data-skill="seo-ads">
+            <span class="percentage">65%</span>
+          </div>
+          <h3>SEO & Ads</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-circle" data-skill="branding">
+            <span class="percentage">75%</span>
+          </div>
+          <h3>Branding</h3>
+        </div>
+        <div class="skill">
+          <div class="skill-circle" data-skill="web-design">
+            <span class="percentage">80%</span>
+          </div>
+          <h3>Web Design</h3>
+        </div>
+      </div>
+    </section>
+    <!-- Start Your New Project Section  -->
+
+    <section class="start-new-project">
+      <h1>Start Your New Project</h1>
+
+      <form class="project-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <input type="tel" placeholder="Your Phone" required />
+        <button type="submit">Send Request</button>
+      </form>
+
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+        obcaecati facilis voluptatibus quibusdam debitis repudiandae tempora
+        similique officiis iste laborum.
+      </p>
+    </section>
+    <!-- Our Contact Section  -->
+
+    <section class="our-contact" id="contact-section">
+      <h1>Our <span>Contact</span></h1>
+
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum,
+        voluptate, impedit. Sunt, aut ex. Nemo saepe, reprehenderit nihil
+        debitis aliquid fuga!
+      </p>
+
+      <div class="contact-infos">
+        <div class="info-item">
+          <i class="fas fa-phone"></i>
+          <!-- Phone Icon -->
+          <span><strong>Phone:</strong> +123 456 7890</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-globe"></i>
+          <!-- Website Icon -->
+          <span><strong>Website:</strong> www.example.com</span>
+        </div>
+        <div class="info-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <!-- Location Icon -->
+          <span><strong>Location:</strong> Karachi, Pakistan</span>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <!-- Google Map with Pin for Governor Sindh House Karachi (zoomed-in and highlighted) -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2463.299332437841!2d67.02248855219224!3d24.850324222606048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e75a28531d1%3A0x412558657f5ff4a8!2sGovernor%20House%20Sindh!5e0!3m2!1sen!2s!4v1727926435560!5m2!1sen!2s"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-logo">
+        <h1>pana <span>cloud</span></h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam optio fugit incidunt voluptate nobis inventore harum.
+        </p>
+        <h6>&copy; Panacloud 2024</h6>
+      </div>
+    
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    
+      <div class="footer-services">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Web Development</a></li>
+          <li><a href="#">App Development</a></li>
+          <li><a href="#">Digital Marketing</a></li>
+          <li><a href="#">SEO</a></li>
+        </ul>
+      </div>
+    
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>Email:</strong> info@example.com</p>
+        <p><strong>Address:</strong> 123 Street, City, Country</p>
+      </div>
+    
+      <div class="footer-social">
+        <h4>Follow Us</h4>
+        <div class="social-link">
+          <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    
+
+    <script src="index.js"></script>
+  </body>
+</html>

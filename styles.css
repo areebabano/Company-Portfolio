@@ -1,0 +1,1407 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General Header Styling */
+header {
+    width: 100%; /* Full-width */
+    position: fixed; /* Sticks to the top of the page */
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    color: white;
+    box-sizing: border-box; /* Ensures padding is included in the width */
+    z-index: 1000; /* Keeps header above other content */
+    height: 60px; /* Header height */
+}
+
+/* Add top margin to body to prevent content from being hidden behind both header and navbar */
+body {
+    margin-top: 140px; /* Adjust based on combined header and navbar height */
+}
+
+/* Social Icons */
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Specific Colors for Each Social Icon */
+.social-icons a {
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+/* Slight zoom effect on hover */
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+.social-icons a[href*="youtube"] {
+    color: #e51919; /* YouTube Red */
+}
+
+.social-icons a[href*="facebook"] {
+    color: #2d5dc2; /* Facebook Blue */
+}
+
+.social-icons a[href*="linkedin"] {
+    color: #056599; /* LinkedIn Blue */
+}
+
+.social-icons a[href*="twitter"] {
+    color: #5fb6ed; /* Twitter Blue */
+}
+
+.social-icons a[href*="plus.google"] {
+    color: #db4437; /* Google+ Red */
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.contact-info i {
+    margin-right: 5px;
+    color: #4caf50;
+}
+
+/* Button Styling */
+.contact-info button {
+    background-color: #4caf50; /* Green */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-info button:hover {
+    background-color: #388e3c; /* Darker green on hover */
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    height: 80px; /* Navbar height */
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #ddd; /* Optional subtle bottom border */
+    position: fixed; /* Fixes navbar below the header */
+    top: 60px; /* Positioned below the header */
+    z-index: 999; /* Ensures navbar is below header */
+}
+
+/* Logo Styling */
+.company-logo img {
+    height: 60px; /* Adjust as needed */
+    width: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+/* Navigation Links */
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px; /* Smaller font size for text */
+    font-weight: normal; /* Default font weight set to normal */
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 2px; /* Reduced padding for a more compact look */
+    transition: color 0.3s, font-weight 0.3s; /* Transition for font-weight */
+    display: flex;
+    align-items: center; /* Centers icon and text */
+    gap: 6px; /* Reduced space between icon and text */
+}
+
+.nav-links a i {
+    font-size: 14px; /* Smaller icon size */
+    color: #388e3c;
+}
+
+/* Add a yellow border below on hover */
+.nav-links a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px; /* Thinner border */
+    background-color: rgba(223, 181, 12, 0.955); /* Border color */
+    position: absolute;
+    top: 25px;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Make text bold on hover */
+.nav-links a:hover {
+    font-weight: bold; /* Apply bold font weight on hover */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    right: 0; /* Position sidebar on the right */
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    /* color: green; */
+    padding-top: 60px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Initially off-screen to the right */
+    overflow-y: auto; /* Allows vertical scrolling if content exceeds height */
+    box-shadow: -3px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for separation */
+}
+
+/* Sidebar links */
+.sidebar a {
+    display: block;
+    padding: 15px 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.sidebar a:hover {
+    background-color: #edecec;
+}
+
+.sidebar a i {
+    font-size: 14px; /* Smaller icon size */
+    color: #388e3c;
+}
+
+/* Close button for sidebar */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    left: 15px; /* Position close button on the left */
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #e51919;
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    font-size: 40px;
+    font-weight: bolder;
+    cursor: pointer;
+    color: green; /* Set the color for the hamburger icon */
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links on mobile */
+    }
+
+    .contact-info p {
+        display:none;
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
+    .sidebar {
+        display: block; /* Ensure sidebar can be displayed on mobile */
+    }
+}
+
+
+/* Hero Section Styling */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Full screen height */
+    background-image: url('/images/background 2.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Text color */
+    text-align: center; /* Center text */
+    font-family: serif;
+    flex-direction: column; /* Stack items vertically */
+    z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+    padding: 20px;
+    max-width: 600px; /* Optional: Limit the width */
+}
+
+/* Center the heading and paragraph */
+.hero-section h1 {
+    font-size: 48px; /* Adjust the size of the heading */
+    margin-bottom: 20px; /* Space between heading and paragraph */
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero-section p {
+    font-size: 18px; /* Adjust the size of the paragraph */
+    margin-bottom: 20px; /* Space between paragraph and button */
+    font-weight: bold;
+}
+
+.hero-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(223, 181, 12, 0.955); /* Button color */
+    color: black;
+    margin-top: 20px; /* Adjusted the margin to space it properly */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-section button:hover {
+    background-color: #2e7d32; /* Darker shade on hover */
+    color: white;
+}
+
+/* Dots Navigation */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px; /* Adjusted margin to fit properly */
+}
+
+.slider-dots .dot {
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Optional: Add hover effect for dots */
+.slider-dots .dot:hover {
+    background-color: rgba(223, 181, 12, 0.955);
+}
+
+/* Our Advantage Section Styling */
+.advantage-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Lighter background for a professional look */
+    text-align: center;
+}
+
+.advantage-section h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #333;
+}
+
+.advantage-section h1 span{
+    color: #2e7d32;
+}
+
+.advantage-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #a6a5a5; /* Lighter text for the paragraph */
+    text-align: center; /* Center the paragraph */
+    max-width: 800px; /* Optional: Limit the paragraph width for better readability */
+    margin-left: auto;
+    margin-right: auto; /* Center the paragraph horizontally */
+}
+
+/* Advantage Icons Container */
+.advantage-icons {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start; /* Align to the top */
+    /* gap: 20px;  */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Each Advantage Icon Styling */
+.advantage-icon {
+    text-align: center;
+    max-width: 250px; /* Limit the width of each item */
+    flex: 1;
+}
+
+.advantage-icon .ad-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 20px;
+    background-color:#e6e5e5; /* Professional blue background */
+    color:#2e7d32;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 56px;
+    transition: transform 0.3s ease; /* Smooth hover effect */
+}
+
+.advantage-icon .ad-icon:hover {
+    transform: scale(1.1); /* Icon scale effect on hover */
+}
+
+.advantage-icon h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.advantage-icon p {
+    font-size: 16px;
+    color: #777;
+    line-height: 1.5;
+}
+
+
+/* About Us Section with Background Image */
+.about-us-section {
+    font-family: serif;
+    padding: 30px 50px;
+    background-color: rgb(240, 240, 240);
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+/* Add an overlay for better text readability */
+.about-us-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(0, 0, 0, 0.5); Semi-transparent black overlay */
+    z-index: 1;
+}
+
+/* Ensure content is above the overlay */
+.about-us-content, h1 {
+    position: relative;
+    z-index: 2;
+}
+
+/* Heading Styling */
+.about-us-section h1 {
+    text-transform: uppercase;
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: black;
+    margin-top: 40px;
+}
+
+.about-us-section span {
+    color: #2e7d32;
+}
+
+/* Content Wrapper */
+.about-us-content {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Left Content (Text) */
+.about-text {
+    flex: 1;
+    text-align: left;
+    color:black;
+}
+
+.about-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Read More Button */
+.read-more {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(223, 181, 12, 0.955); /* Green button color */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #2e7d32; /* Darker green on hover */
+    color: white;
+}
+
+/* Right Content (Image) */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+/* Responsive Media Queries */
+
+/* For Tablets and Medium Screens (Width 768px - 1199px) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .about-us-section {
+      padding: 20px 30px; /* Reduce padding */
+  }
+
+  .about-us-section h1 {
+      font-size: 28px; /* Smaller heading font size */
+      margin-top: 20px;
+      margin-bottom: 20px;
+  }
+
+  .about-us-content {
+      gap: 20px; /* Reduce gap between content sections */
+  }
+
+  .about-text p {
+      font-size: 16px; /* Slightly smaller paragraph text */
+  }
+
+  .read-more {
+      font-size: 14px; /* Smaller button text */
+      padding: 8px 16px; /* Smaller button size */
+  }
+}
+
+/* For Mobile and Small Screens (Width Below 768px) */
+@media (max-width: 767px) {
+  .about-us-section {
+      padding: 15px 20px; /* Further reduce padding */
+  }
+
+  .about-us-section h1 {
+      font-size: 24px; /* Smaller heading font size */
+  }
+
+  .about-us-content {
+      flex-direction: column; /* Stack content vertically */
+      gap: 15px; /* Reduce gap between content sections */
+  }
+
+  .about-text {
+      text-align: center; /* Center align text for smaller screens */
+  }
+
+  .about-text p {
+      font-size: 14px; /* Smaller paragraph text */
+  }
+
+  .about-image {
+      justify-content: center; /* Center image */
+  }
+
+  .read-more {
+      font-size: 14px; /* Smaller button text */
+      padding: 8px 16px; /* Smaller button size */
+  }
+}
+
+
+/* Our Services Section */
+.our-services-section {
+    font-family: serif;
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+  }
+  
+  /* Section Heading */
+  .our-services-section h1 {
+    text-transform: uppercase;
+    color: black;
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .our-services-section span {
+    color: #2e7d32;
+  }
+  
+  /* Section Description */
+  .services-description {
+    font-size: 18px;
+    color: #a6a5a5;
+    text-align: center; 
+    max-width: 600px; /* Optional: Limit the paragraph width for better readability */
+    margin-left: auto;
+    margin-right: auto; 
+    margin-bottom: 60px;
+    /* line-height: 1.6; */
+  }
+
+  
+  /* Services Cards Wrapper */
+  .services-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+/* Individual Service Card */
+.service-card {
+    background-color: white; /* White card background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px); /* Adjust card width for 4 cards in a row */
+    text-align: center;
+    position: relative;
+    max-width: 300px; /* Ensure cards don't get too wide */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+  }
+  
+  /* Hover Animation */
+  .service-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add a larger shadow */
+  }
+  
+  /* Card Icon */
+  .service-card .icon {
+    position: absolute;
+    top: -30px; /* Half above the card */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(223, 181, 12, 0.955); /* Yellow background for the star */
+    border-radius: 50%;
+    width: 60px; /* Circle size */
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1; /* Ensures the star is above the card */
+  }
+  
+  .service-card .icon i {
+    font-size: 24px;
+    color: red; /* Red star icon */
+  }
+  
+  /* Card Heading */
+  .service-card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 40px; /* Adjusted for the star's position */
+    margin-bottom: 10px;
+    z-index: 2; /* Keeps content above star overlap */
+  }
+  
+  /* Card Text */
+  .service-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Read More Button */
+  .service-card .read-more {
+    padding: 10px 20px;
+    background-color: #4caf50; /* Green button color */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth button hover */
+  }
+  
+  .service-card .read-more:hover {
+    background-color: #388e3c; /* Darker green on hover */
+    transform: translateY(-3px); /* Slight lift effect */
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .service-card {
+      width: calc(50% - 20px); /* Two cards per row on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-card {
+      width: 100%; /* One card per row on very small screens */
+    }
+  }
+  
+  /* Our Portfolio Section */
+.our-portfolio-section {
+    font-family: serif;
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text color for contrast */
+  }
+  
+  .our-portfolio-section h1 {
+    font-size: 36px;
+    color: #fff; /* White heading text */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  .our-portfolio-section h1 span{
+    color: #2e7d32;
+  }
+  
+  .our-portfolio-section .portfolio-description {
+    font-size: 18px;
+    color: #a6a5a5; /* Lighter gray for description */
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Portfolio Categories */
+  .portfolio-categories {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .portfolio-categories span {
+    font-size: 16px;
+    color: rgba(223, 181, 12, 0.955);
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .portfolio-categories span:hover {
+    border-radius: 20px;
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  /* Portfolio Images Grid */
+  .portfolio-images {
+    padding: 1px 20px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    /* gap: 20px; Space between cards (images) */
+    /* margin-top: 5px; */
+  }
+  
+  /* Portfolio Item (Card) */
+  .portfolio-item {
+    overflow: hidden;
+    position: relative;
+    /* border-radius: 10px; Rounded corners for images */
+    box-sizing: border-box; /* Ensure padding and borders do not affect size */
+  }
+  
+  .portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure images cover the entire space */
+    /* border-radius: 10px; Rounded corners for the image */
+    transition: transform 0.3s ease, border 0.3s ease; /* Smooth zoom effect and border change */
+  }
+  
+  /* Hover Effect on Portfolio Items */
+  .portfolio-item:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
+    border: 8px solid rgba(223, 181, 12, 0.955); /* Green border on hover */
+  }
+  
+/* Our Process Section */
+.our-process-section {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  color: #333;
+}
+
+/* Heading */
+.our-process-section h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.our-process-section h1 span {
+  color: #2e7d32;
+}
+
+.process-description {
+  font-size: 18px;
+  color: #a6a5a5;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Process Steps Wrapper */
+.process-steps {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping */
+  gap: 20px; /* Space between steps */
+  justify-content: center; /* Center steps */
+  margin-bottom: 40px;
+}
+
+/* Individual Process Step */
+.process-step {
+  text-align: center;
+  flex: 1 1 calc(33.33% - 20px); /* Default: 3 steps per row */
+  min-width: 200px; /* Minimum width to prevent shrinking too much */
+  max-width: 300px;
+  position: relative;
+}
+
+/* Circle with White Background and Gray Border */
+.circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 5px solid #ccc;
+  margin: 0 auto 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* Yellow Half Circle */
+.half-circle {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(223, 181, 12, 0.955);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  z-index: 2;
+}
+
+/* Icons inside Circles */
+.icon {
+  font-size: 46px;
+  color:#2e7d32;
+  position: absolute;
+  top: 18%; /* Adjust to center icon in circle */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Remove connecting line for wrapped steps */
+@media (max-width: 768px) {
+  .process-step:not(:nth-child(2n))::after {
+    display: none;
+  }
+}
+
+/* Heading Below Icons */
+.process-step h3 {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Description Below Each Step */
+.step-description {
+  font-size: 14px;
+  color: #a6a5a5;
+  margin-top: 10px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .process-step {
+    flex: 1 1 calc(50% - 20px); /* Two steps per row */
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .icon {
+    font-size: 40px;
+  }
+
+  .process-step h3 {
+    font-size: 14px;
+  }
+
+  .step-description {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icon {
+    font-size: 32px;
+  }
+
+  .process-description {
+    font-size: 16px;
+  }
+
+  .process-step h3 {
+    font-size: 12px;
+  }
+
+  .step-description {
+    font-size: 12px;
+  }
+}
+
+  
+/* People About Us Section Styling */
+.people-about-us {
+  padding: 20px 10px;
+  font-family: serif;
+  text-align: center;
+  background-color: #f9f9f9;
+  margin-bottom: 60px
+}
+
+.people-about-us h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.people-about-us h1 span {
+  color: #2e7d32;
+}
+
+.people-about-us p {
+  font-size: 16px;
+  color: #a6a5a5;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+
+/* Border Container for 4 boxes */
+.border-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* 2 columns */
+  grid-template-rows: 1fr 1fr;  /* 2 rows */
+  gap: 20px;
+  padding: 5px;
+  margin-top: 5px;
+  position: relative;
+  height: 400px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Individual Boxes inside the Container */
+.box {
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #ddd;  /* Inner border */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon Styling */
+.ppl-icon {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #2e7d32; /* Icon border */
+}
+
+.ppl-icon i {
+  font-size: 36px;
+  color: #bfbfc0;
+}
+
+/* Text Content Styling */
+.box h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.box p {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+}
+
+/* Dots Navigation Below Each Box */
+.slider-dot {
+  display: flex;
+  justify-content: center; /* Centers the dots horizontally */
+  gap: 15px;
+  margin-top: 15px; /* Adjusted margin to give space from the box */
+  margin-right: -110%;
+}
+
+.slider-dot .dots {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(223, 181, 12, 0.955);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Optional: Add hover effect for dots */
+.slider-dot .dots:hover {
+  background-color: orangered;
+}
+
+
+/* Our Skills Section Styling */
+.our-skills {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  font-family: serif;
+  margin-top: 190px;
+}
+
+.our-skills h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.our-skills h1 span {
+  color: #2e7d32;
+}
+
+.our-skills p {
+  font-size: 16px;
+  color: #a6a5a5;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Skills Section */
+.skills {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Space between circles */
+  flex-wrap: wrap; /* Ensures wrapping on smaller screens */
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.skill-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: conic-gradient(#007bff 0% 45%, #ddd 45% 100%); /* Example: 45% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.skill-circle[data-skill="graphic-design"] {
+  background: conic-gradient(#007bff 0% 45%, #ddd 45% 100%); /* Blue for 45% */
+}
+
+.skill-circle[data-skill="seo-ads"] {
+  background: conic-gradient(#28a745 0% 65%, #ddd 65% 100%); /* Green for 65% */
+}
+
+.skill-circle[data-skill="branding"] {
+  background: conic-gradient(#ffc107 0% 75%, #ddd 75% 100%); /* Yellow for 75% */
+}
+
+.skill-circle[data-skill="web-design"] {
+  background: conic-gradient(#dc3545 0% 80%, #ddd 80% 100%); /* Red for 80% */
+}
+
+.skill-circle::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.skill-circle .percentage {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  position: relative;
+  z-index: 1; /* Above the inner circle */
+}
+
+.skill h3 {
+  margin-top: 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+
+
+/* Start New Project Section Styling */
+.start-new-project {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #8ed926; 
+  font-family: serif
+}
+
+.start-new-project h1 {
+  text-transform: uppercase;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.project-form {
+  display: flex;
+  flex-direction: row;  /* Flex in a row layout */
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  max-width: 700px;
+}
+
+.project-form input {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  width: 250px;  /* Adjust width of inputs */
+}
+
+.project-form input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.project-form button {
+  padding: 10px 20px;
+  text-transform: capitalize;
+  font-size: 16px;
+  background-color: #ffc107;  /* Yellow Background */
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;  /* Prevent button text from wrapping */
+}
+
+.project-form button:hover {
+  background-color: #e7b111;  /* Darker Yellow on hover */
+  color: white;
+}
+
+.start-new-project p {
+  font-size: 16px;
+  color: white;
+  max-width: 700px;
+  margin: 20px auto 0;
+  line-height: 1.6;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .project-form {
+    flex-direction: column;  /* Stack inputs vertically on smaller screens */
+    width: 100%;
+  }
+
+  .project-form input {
+    width: 100%;  /* Full width for inputs on small screens */
+  }
+}
+
+/* Our Contact Section Styling  */
+.our-contact {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  font-family:serif
+}
+
+.our-contact h1 {
+  text-transform: uppercase;
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.our-contact h1 span{
+  color: #2e7d32;
+}
+
+.our-contact p {
+  font-size: 16px;
+  color:#a6a5a5;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Contact Info Flex Styling */
+.contact-infos {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+}
+
+.info-item i {
+  font-size: 24px;
+  color:#2e7d32
+}
+
+.info-item span {
+  font-size: 18px;
+  color: #555;
+}
+
+/* Map container */
+.map-container {
+  margin-top: 30px;
+}
+
+.map-container h3 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+iframe {
+  border: 0;
+  width: 100%;
+  height: 400px;
+}
+
+/* Footer Styles */
+.footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* Responsive grid */
+  gap: 30px;
+  padding: 40px;
+  background-color: #6eb608; /* Deep green background */
+  color: #fff;
+  text-align: left;
+  border-top: 4px solid #ffcc00; /* Yellow border at the top */
+  box-shadow: 0 -1px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  position: relative;
+}
+
+.footer-logo,
+.footer-links,
+.footer-services,
+.footer-contact,
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  position: relative;
+}
+
+/* Vertical lines between columns */
+.footer > div:not(:last-child) {
+  border-right: 2px solid #ffcc00; /* Subtle vertical line */
+}
+
+/* Footer Logo */
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo h1 {
+  font-size: 42px;
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.footer-logo h1 span {
+  color: black; /* Yellow color for 'cloud' */
+}
+
+.footer-logo p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: white;
+}
+
+.footer-logo h6 {
+  font-size: 16px;
+  color: white;
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+/* Footer Links, Services, and Contact Section Titles */
+.footer-links h4, .footer-services h4, .footer-contact h4, .footer-social h4 {
+  font-size: 24px;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #ffcc00; /* Yellow underline */
+  padding-bottom: 10px;
+}
+
+/* Lists */
+.footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer ul li {
+  margin-bottom: 10px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer ul li a:hover {
+  color: #ffcc00; /* Yellow on hover */
+}
+
+/* Footer Contact Section */
+.footer-contact p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: white;
+}
+
+/* Social Media Links */
+.footer-social .social-link {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-social .social-link a {
+  font-size: 22px;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.footer-social .social-link a:hover {
+  color: #ffcc00; /* Yellow on hover */
+}
+
+
+
