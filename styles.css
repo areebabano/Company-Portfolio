@@ -224,7 +224,7 @@ body {
     font-weight: bolder;
     cursor: pointer;
     color: green; /* Set the color for the hamburger icon */
-    margin-right: 100px;
+    margin-right: 80px;
 }
 
 /* Responsive Styles for Mobile */
@@ -237,7 +237,7 @@ body {
         display:none;
     }
     .contact-info button{
-      margin-right: 90px;
+      margin-right: 60px;
       font-size: 10px;
     }
 
@@ -1056,11 +1056,12 @@ body {
 
 /* Our Skills Section Styling */
 .our-skills {
-  padding: 260px 20px;
+  padding: 60px 20px;
   text-align: center;
   background-color: #f9f9f9;
   font-family: serif;
   margin-top: 220px;
+  padding-bottom: 60px;
 }
 
 .our-skills h1 {
@@ -1148,14 +1149,21 @@ body {
   color: #333;
 }
 
-
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+  .our-skills{
+    padding: 200px 20px;
+    padding-bottom: 60px;
+  }
+}
 
 /* Start New Project Section Styling */
 .start-new-project {
   padding: 40px 20px;
   text-align: center;
   background-color: #8ed926; 
-  font-family: serif
+  font-family: serif;
+  margin-top: 0%;
 }
 
 .start-new-project h1 {
